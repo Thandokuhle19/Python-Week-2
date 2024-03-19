@@ -24,3 +24,5 @@ This part focuses on how gloabl and local variables interact.
 Function Scope:
 ~ In the previous section, we had discussed that *args and *kwargs, which were used to print out the arguments passed into a function.
 ~ This allowed us to see a tuple and dictionary of the passed arguemens
+~ A method called "locals" (locals())function allows us to access all the variables within a Python function without any asterisks.
+~ For example we will use the locals functions to print the output. So, let's call perform operation with the arguments one and two and specify that the operation is multiplication.
