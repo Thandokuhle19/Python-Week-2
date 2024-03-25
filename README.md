@@ -71,4 +71,36 @@ print(myDog.legs)
 ~ If we try to access "dogs.legs", we will get an error, and we cannot modify the value of legs.
 
 # Static Attributes
-~ 
+~ So, instead of keeping it in the constructor, we define it a static variable outside of the constructor.
+~ Meaning it will still have the same four legs, thus legs attribute can be accessed directly on the class itself .
+~ The variables are called "static" because they do not change with each instance. They are used to hold constants or fundamental business logic.
+~ Eg, class Dog:
+          legs = 4
+    def __init__(self,name):
+        self.name = name
+
+    def speak(self):
+        print(self.name + ' says: Bark !')
+
+myDog = Dog('Rover')
+print(myDog.name)
+print(myDog.legs)
+
+~ Static variables can change. To prevent this, programmers add underscore before the variable name. 
+~ This shows that the variabe should not be changed directly, and a "getter" method should be used.
+~ Getters are used 
+
+# Instance and Static methods
+
+
+_Inheritance:_
+# Class inheritance
+~ It is possible to inherit all the methods and attributes of another class, in the programming world.
+~ Original class is the parent class, whereas the new class that extends is known as the child class.
+~ Inheritance gets processed automatically when the child class is created.
+~ Eg,  we have a dog class and a chihuahua class that needs to be created that inherits from the dog class. We do this by writing it like: "class Chihuahua(dog):" and include "pass" for now (to not have a an error), which creates a new class.
+~ A chihuahua instance can then be created using all the methods and attributes of the parent dog class.
+~ But, if the child class defines an attribute or method that is the same as the parent class, the parents version will be overwritten by the child's version.
+
+# Extending Built-in Classes
+~ Creating a new list can be done by representing it as "list" and even though it appears as a function. "list" it is actually a class. 
