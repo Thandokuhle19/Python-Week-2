@@ -103,4 +103,41 @@ _Inheritance:_
 ~ But, if the child class defines an attribute or method that is the same as the parent class, the parents version will be overwritten by the child's version.
 
 # Extending Built-in Classes
-~ Creating a new list can be done by representing it as "list" and even though it appears as a function. "list" it is actually a class. 
+~ Creating a new list can be done by representing it as "list" and even though it appears as a function. "list" is actually a class. 
+~ We thus create a unique list class by extending the list class.
+~ The unique list class inherits from the list class and therefore overrides the append function.
+~ It will then return the item once it has checked the new function and if the item is already in the list.
+~ The parent class will be called by the original append function in the parent class. We won't use the self.append because it will cause infinite recursion or an endless loop.
+~ We do this by using the "super" function, which access the underlying instance of the parent class, and will be called super.append.
+~ For the new class to be testedm we create a new instance of the unique list and append some items to it, and therefore print the list to see that it only records unique items.
+
+_Handling Errors and Exceptions:_
+~ Problems occur in python, and these problems are referred to as erros, while others times are called exceptions.
+~ Exceptions stem from a class called the base exception, which in turn extends the base exception class.
+~ Eg, when we divide by zero, an error occurs and this is a type of arithmetic error, which is a type of exception, which in turn extends the base exception class.
+~ The base exception call provides useful and powerful properties to exceptions.
+~ For instance, we take the division error, we can try to find in which file did it occur.
+~ By finding this error, we can also find th specific line of where the error occured.
+~ But now, if we place 1/10 into a function called "causeError" and then call this function, the stack becomes more defined.
+~ We can analyse the original location of the function call and where within that function that error was triggered.
+~ This entire traceback is known as a stack trace.
+~ It is important to write clear cod and pay attention to your program's structure to avoid excessive debugging difficulties.
+
+# Try/Except
+~ Eg, we add 1/10 and then except. 
+~ We are going to except as e, so e is going to be our variable.
+~ This is a zero division error, we caught this exception and it will not be raised anymore. It is simply a class, it has attributes, you can create them, and they can be returned.
+~ Eg, try:
+         1/10
+        except Exception as e:
+            print(type(e))
+will show <class 'ZeroDivisionError'>
+
+_Managing and Handling Exceptions:_
+~ For example, if we do not care about getting the specific instance of the exception, and we want to print something, we do not have to have the as e in order to catch an exception.
+# Finally 
+~ If you take the Try/Except block and add a finally to it, this will always executes and gets printed out.
+~ Finally statements always execute no matter what happens inside this try block, no need for except statements. 
+~ This error is thrown, but will still be printed out. Even if no exception is raised at all, that still executes.
+~ This is used when timing how long a function takes to execute. So, if we import the time class, import time, this can be used to actually time our function.
+~ 
