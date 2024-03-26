@@ -140,4 +140,65 @@ _Managing and Handling Exceptions:_
 ~ Finally statements always execute no matter what happens inside this try block, no need for except statements. 
 ~ This error is thrown, but will still be printed out. Even if no exception is raised at all, that still executes.
 ~ This is used when timing how long a function takes to execute. So, if we import the time class, import time, this can be used to actually time our function.
+~ To make a timer, we need the start time, which time.time will give you the current time and seconds. 
+~ We also have time.sleep, which pauses the execution for a number of seconds.
+~ If the statement is changed to something that causes a zero division error, the timer will still happen.
+~ For this try-finally pattern, it keeps the code clean and compact, which allows you to do any cleanup or logging after a statement completes irrespective of what happens inside the try-block.
+
+# Catching Exceptions by Type
+~ In this topic, we catch the exception class. You may be able to add another exception statement above and chain them together.
+~ Let's say we want to catch the zero division specifically. There is a zero division error and it will be printed out and a type error statement will be added, except the type error and print it out. 
+~ However, this was a zero division error, and not a type error.
+~ Adding an int to a string will cause a type error. 
+~ The order of the exception statements do matter and Python will try the first one.
+~ General exceptions>> down, and more specific>> at the top.
+
+# Custom Decorators
+~ Custom decorators allows us to change the name of a function.
+
+# Raising Exceptions
+~ 
+
+_Working with Custom Exceptions:_
+~ The class CustomException is done like this:
+            class CustomException(Exception):
+                pass
+    which clas CustomException extends Exception:pass.
+~ We used the pass statement because we do not need to define anything for out CustomException class. Its inherited by the constructor of the Exception class that is extending it.
+~ The keywords information, CustomException, is the information that is needed to know to help debug the app or let the user know that was their doing is incorrect.
+~ We will write the function that raises this new CustomException:
+        def causeError: 
+                raise CustomException('You called the causeError function!')
+                
+
+        causeError()  
+~ Custom exceptions might have some attributes that are useful for organizing and presenting information to the user about the error.
+
+# Adding attributes
+~ We want to write an HTTP exception with a static status code and a message attribute - some information with how to format the string that it passes to the parent exeption.
+
+~ Custom exception classes keeps your code clean and organised.
+~ The classes act as documentation for all the problems that could happen, what is the cause, what are the solutions. They also seperate common expected errors from something.
+
+_Fundamentals of Threads and Processes:_
+~ Early in the course, it had been stated that computers operate on memory. 
+~ Computers have both memory and file storage, both long-term and short-term memory.
+~ When we save a file and load to file from the disc in the storage, that will be long-term. However, it is short-term memory in the processor when we declare a variable in our program.
+~ The first program saves a file to the disk.
+~ The second program will pick it up since it is running in a second process.
+~ Both the programs have access to the same long-term storage on the physical machine, but if the program writes something to memory, the second program cannot access it.
+~ Operating system is responsible for allocating memory to each process running on the computer.
+~ This puts the wall between the processes so they cannot access each other's memory.
+~ Access is controlled by the operating system.
+~ Note that it is important for programmers to know where these things are being stored and who has access to what.
+~ But operating systems allow us to do is to move the two pieces of code into the same process. When they are moved into the same process, they get to share memory.
+~ So, we still get to run them in parallel, at the same time, but instead of seperate processes, they are run with seperate threads.
+~ A process can have multiple threads and execute code at the same time in parallel.
+
+# Multithreading
+~ We will need first need to import the threading and time modules.
+~ So, we will import threading, which is important 
+
+# Multiprocessing
+~ There is file called 1000seconds.py, it calls time.sleep for a thousand seconds. 
 ~ 
