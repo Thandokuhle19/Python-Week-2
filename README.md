@@ -154,7 +154,7 @@ _Managing and Handling Exceptions:_
 ~ General exceptions>> down, and more specific>> at the top.
 
 # Custom Decorators
-~ Custom decorators allows us to change the name of a function.
+~ Custom decorators does not allow us to change the name of a function. Thus allows us to modify arguments
 
 # Raising Exceptions
 ~ 
@@ -198,7 +198,35 @@ _Fundamentals of Threads and Processes:_
 # Multithreading
 ~ We will need first need to import the threading and time modules.
 ~ So, we will import threading, which is important 
+~ Threads share the same space in memory.
+~ Multi-threading decrease the runtime of a program when the program has periods of "waiting" and doing nothing.
 
 # Multiprocessing
 ~ There is file called 1000seconds.py, it calls time.sleep for a thousand seconds. 
-~ 
+~ Then we open a second tab and run it in a second tab. Now, there will be two tabs running the program.
+~ This is multiprocessing because there are two python processes running independently on the machine.
+~ To do this, we import the processes. Eg, "from multiprocessing import Process".
+~ A good way to collect output from multiple processes is writing the results to a file.
+~ Processes can contain multiple threads.
+
+_Opening, Reading, and Writing:_
+# Reading files:
+~ When it comes to files, we are working a little with operating system and therefore, there are some things is needed to be managed.
+~ One of the things is whether reading the contents of the file or to make changes to it.
+~ The reason for this is because it causes problems if two applications are making changes to the same file at the same time.
+~ We use the open function and pass in the name of a file.
+~ Eg, f = open('10_01_file.txt','r')
+      print(f)
+      f.readline()
+~ When we open the file in the read mode, and if we print f, we get a file object.
+~ To get the actual text inside the file, we have the readline, so f.readline.
+~ This will read the line of the file one at a time.
+~ To get the lines of many lines, we use readlines.
+~ This will get all of the lines of the file that have not been read already and puts them into a list of strings.
+
+# Writing files:
+~ For writing files, we use 'w' to represent 'write'.
+~ We are going to call it output.txt, which does not exist as of yet, but when it is ran, it will create the file for us.
+~ Eg, Eg, f = open('10_01_file.txt','w')
+      print(f)
+      f.write()
