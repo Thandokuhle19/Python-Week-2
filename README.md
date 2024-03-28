@@ -227,6 +227,53 @@ _Opening, Reading, and Writing:_
 # Writing files:
 ~ For writing files, we use 'w' to represent 'write'.
 ~ We are going to call it output.txt, which does not exist as of yet, but when it is ran, it will create the file for us.
+~ If we want to close the file we can do so using fclose().
 ~ Eg, Eg, f = open('10_01_file.txt','w')
       print(f)
       f.write()
+      f.close()
+
+# Appending files
+~ Eg, f = open('10_01_output.txt','a')
+      fwrite('Line 3\n')
+      fwrite('Line 4\n')
+      f.close()
+
+      with open('10_01_output.txt','a') as f:
+          f.write('some stuff\n')
+          f.write('some other stuff\n')
+     print(f)
+
+     f.write('PS. I forgot some stuff')
+~ The code above shows a file that is created, writing a couple of files. Hence used the write function.
+~ Python tries to make file writing more efficient by putting all of the data that you are writing to the file in a buffer and it only writes to the file when that buffer gets full or when you close the file.
+~ So, if we close the file, we can do that with f.close() and then run it.
+
+# CSV
+~ We import csv module like this: import csv.
+~ The 10_02_us.csv is derived from a dataset from geonames.org which provides millions of place names in geographical data sets spanning the globe.
+~ This particular data set contains every zip code in the US along with information about the city or town that it represents, and the the latitude and longitude of its locations.
+
+# Load JSON
+~ JSON is not python, but JSON-formatted string looks a lot like a Python dictionary, but it is a string.
+~ JSON is a string that happens to be in JSON formatt and in order to turn it into a dictionary, we need to import the JSON module at the top, like this: import json.
+~ The use a method called json.loads, and pass in the string, jsonString. 
+~ Eg, import json
+
+      jsonString'{"a": "apple", "b": "bear", "c": "cat"}
+      try:
+          json.loads(jsonString)
+
+      except JSONDecodeError:
+          print('Could not parse JSON!')
+
+~ However, we get a JSON decode error.
+~ So, because this JSONDecodeError comes from the JSON module, we need to specifically import it as well.
+~ There it will be liks this: From json import JSONDecodeError.
+
+# Dumping JSON
+~ For this, we use json.dumps method.
+~ The dumps is a plural and we usually do not add any exception handlin because if you have a valid Python dictionary, there is not a lot that can go wrong when formatting it as a JSON string.
+~ But there is only one exception this rule where an exception could be thrown.
+
+
